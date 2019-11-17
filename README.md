@@ -1,5 +1,6 @@
 # Text-Voice-Controlled-Photo-Album_AWS
 Photo album web application that can be searched using natural language through both text and voice.<br/>
+This application uses Lex, ElasticSearch, and Rekognition to create an intelligent search layer to query your photos for people, objects, actions, landmarks and more.
 
 ## Step:
 
@@ -72,3 +73,5 @@ iii.	Upload new photos using the PUT /photos<br/>
 #### c.	Set up the bucket for static website hosting (same as HW1).
 #### d.	Upload the frontend files to the bucket (B2).
 #### e.	Integrate the API Gateway-generated SDK (SDK1) into the frontend, to connect your API.
+
+![screenshot] architecture.png
