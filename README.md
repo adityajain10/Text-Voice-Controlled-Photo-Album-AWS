@@ -1,9 +1,9 @@
 # Text-Voice-Controlled-Photo-Album_AWS
 Photo album web application that can be searched using natural language through both text and voice.<br/>
 
-## Outline:
+## Step:
 
-This assignment has five components:
+There are 5 components:
 
 ### 1.	Launch an ElasticSearch instance 
 #### a.	Using AWS ElasticSearch service , create a new domain called “photos”.<br/>
@@ -37,37 +37,37 @@ Use the following schema for the JSON object:<br/>
 ```
 ### 3.	Search
 #### a.	Create a Lambda function (LF2) called “search-photos”.
-i.	Launch the Lambda function inside the same VPC as ElasticSearch. This ensures that the function can reach the ElasticSearch instance.
-ii.	Make sure the Lambda has the same Security Group (SG1) as ElasticSearch.
+i.	Launch the Lambda function inside the same VPC as ElasticSearch. This ensures that the function can reach the ElasticSearch instance.<br/>
+ii.	Make sure the Lambda has the same Security Group (SG1) as ElasticSearch.<br/>
 #### b.	Create an Amazon Lex bot to handle search queries.
-i.	Create one intent named “SearchIntent”.
-ii.	Add training utterances to the intent, such that the bot can pick up both keyword searches (“trees”, “birds”), as well as sentence searches (“show me trees”, “show me photos with trees and birds in them”).
-●	You should be able to handle at least one or two keywords per query.
+i.	Create one intent named “SearchIntent”.<br/>
+ii.	Add training utterances to the intent, such that the bot can pick up both keyword searches (“trees”, “birds”), as well as sentence searches (“show me trees”, “show me photos with trees and birds in them”).<br/>
+●	You should be able to handle at least one or two keywords per query.<br/>
 #### c.	Implement the Search Lambda function (LF2):
-i.	Given a search query “q”, disambiguate the query using the Amazon Lex bot.
-ii.	If the Lex disambiguation request yields any keywords (K1, …, Kn), search the “photos” ElasticSearch index for results, and return them accordingly (as per the API spec).
-●	You should look for ElasticSearch SDK libraries to perform the search.
-iii.	Otherwise, return an empty array of results (as per the API spec).
+i.	Given a search query “q”, disambiguate the query using the Amazon Lex bot.<br/>
+ii.	If the Lex disambiguation request yields any keywords (K1, …, Kn), search the “photos” ElasticSearch index for results, and return them accordingly (as per the API spec).<br/>
+●	You should look for ElasticSearch SDK libraries to perform the search.<br/>
+iii.	Otherwise, return an empty array of results (as per the API spec).<br/>
 ### 4.	Build the API layer
 #### a.	Build an API using API Gateway.
-i.	The Swagger API documentation for the API can be found here:
-https://github.com/001000001/ai-photo-search-columbia-f2018/blob/master/swagger.yaml 
+i.	The Swagger API documentation for the API can be found here:<br/>
+https://github.com/001000001/ai-photo-search-columbia-f2018/blob/master/swagger.yaml
 #### b.	The API should have two methods:
-i.	PUT /photos
+i.	PUT /photos<br/>
 
-Set up the method as an Amazon S3 Proxy . This will allow API Gateway to forward your PUT request directly to S3.
+Set up the method as an Amazon S3 Proxy . This will allow API Gateway to forward your PUT request directly to S3.<br/>
 
-ii.	GET /search?q={query text}
+ii.	GET /search?q={query text}<br/>
 
-Connect this method to the search Lambda function (LF2).
+Connect this method to the search Lambda function (LF2).<br/>
 #### c.	Setup an API key for your two API methods.
 #### d.	Deploy the API.
 #### e.	Generate a SDK for the API (SDK1).
 5.	Frontend
 #### a.	Build a simple frontend application that allows users to:
-i.	Make search requests to the GET /search endpoint
-ii.	Display the results (photos) resulting from the query
-iii.	Upload new photos using the PUT /photos
+i.	Make search requests to the GET /search endpoint<br/>
+ii.	Display the results (photos) resulting from the query<br/>
+iii.	Upload new photos using the PUT /photos<br/>
 #### b.	Create a S3 bucket for your frontend (B2).
 #### c.	Set up the bucket for static website hosting (same as HW1).
 #### d.	Upload the frontend files to the bucket (B2).
