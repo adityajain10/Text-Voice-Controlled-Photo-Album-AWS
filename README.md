@@ -8,21 +8,21 @@ This assignment has five components:
 ### 1.	Launch an ElasticSearch instance 
 #### a.	Using AWS ElasticSearch service , create a new domain called “photos”.<br/>
 #### b.	Make note of the Security Group (SG1) you attach to the domain.<br/>
-c.	Deploy the service inside a VPC. This prevents unauthorized internet access to your service.<br/>
+#### c.	Deploy the service inside a VPC. This prevents unauthorized internet access to your service.<br/>
 ### 2.	Upload & index photos
-a.	Create a S3 bucket (B2) to store the photos.<br/>
-b.	Create a Lambda function (LF1) called “index-photos”.<br/>
+#### a.	Create a S3 bucket (B2) to store the photos.<br/>
+#### b.	Create a Lambda function (LF1) called “index-photos”.<br/>
 i.	Launch the Lambda function inside the same VPC as ElasticSearch. This ensures that the function can reach the ElasticSearch instance.<br/>
 ii.	Make sure the Lambda has the same Security Group (SG1) as ElasticSearch.<br/>
-c.	Set up a PUT event trigger  on the photos S3 bucket (B2), such that whenever a photo gets uploaded to the bucket, it triggers the Lambda function (LF1) to index it.<br/>
+#### c.	Set up a PUT event trigger  on the photos S3 bucket (B2), such that whenever a photo gets uploaded to the bucket, it triggers the Lambda function (LF1) to index it.<br/>
 i.	To test this functionality, upload a file to the photos S3 bucket (B2) and check the logs of the indexing Lambda function (LF1) to see if it got invoked. If it did, your setup is complete.<br/>
 ●	If the Lambda (LF1) did not get invoked, check to see if you set up the correct permissions  for S3 to invoke your Lambda function.<br/>
-d.	Implement the indexing Lambda function (LF1):<br/>
+#### d.	Implement the indexing Lambda function (LF1):<br/>
 i.	Given a S3 PUT event (E1) detect labels in the image, using Rekognition  (“detectLabels” method).<br/>
 ii.	Store a JSON object in an ElasticSearch index (“photos”) that references the S3 object from the PUT event (E1) and an array of string labels, one for each label detected by Rekognition.<br/>
 <br/>
 Use the following schema for the JSON object:<br/>
-
+```
 {
 	“objectKey”: “my-photo.jpg”,
 	“bucket”: “my-photo-bucket”,
@@ -34,6 +34,7 @@ Use the following schema for the JSON object:<br/>
 		“park”
 	]
 }
+```
 3.	Search
 a.	Create a Lambda function (LF2) called “search-photos”.
 i.	Launch the Lambda function inside the same VPC as ElasticSearch. This ensures that the function can reach the ElasticSearch instance.
