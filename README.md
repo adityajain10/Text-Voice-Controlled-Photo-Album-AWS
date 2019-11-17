@@ -2,8 +2,10 @@
 Photo album web application that can be searched using natural language through both text and voice.<br/>
 This application uses Lex, ElasticSearch, and Rekognition to create an intelligent search layer to query your photos for people, objects, actions, landmarks and more.
 
-## Steps:
+## Architecture
+![screenshot](architecture.png)
 
+## Steps:
 There are 5 components:
 
 ### 1.	Launch an ElasticSearch instance 
@@ -74,5 +76,3 @@ iii.	Upload new photos using the PUT /photos<br/>
 #### d.	Upload the frontend files to the bucket (B2).
 #### e.	Integrate the API Gateway-generated SDK (SDK1) into the frontend, to connect your API.
 
-## Architecture
-![screenshot](architecture.png)
