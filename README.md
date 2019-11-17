@@ -66,7 +66,7 @@ Connect this method to the search Lambda function (LF2).<br/>
 #### c.	Setup an API key for your two API methods.
 #### d.	Deploy the API.
 #### e.	Generate a SDK for the API (SDK1).
-5.	Frontend
+### 5.	Frontend
 #### a.	Build a simple frontend application that allows users to:
 i.	Make search requests to the GET /search endpoint<br/>
 ii.	Display the results (photos) resulting from the query<br/>
