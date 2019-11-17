@@ -74,4 +74,4 @@ iii.	Upload new photos using the PUT /photos<br/>
 #### d.	Upload the frontend files to the bucket (B2).
 #### e.	Integrate the API Gateway-generated SDK (SDK1) into the frontend, to connect your API.
 
-![screenshot]architecture.png
+![screenshot](architecture.png)
