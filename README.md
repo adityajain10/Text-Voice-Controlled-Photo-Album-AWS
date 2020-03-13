@@ -89,11 +89,15 @@ Connect this method to the search Lambda function (LF2).<br/>
 #### e.	Generate a SDK for the API (SDK1).
 
 ### 5.	Frontend
-a.	Build a simple frontend application that allows users to:
+#### a.	Build a simple frontend application that allows users to:
 i.	Make search requests to the GET /search endpoint<br/>
 ii.	Display the results (photos) resulting from the query<br/>
 iii.	Upload new photos using the PUT /photos<br/>
-b.	Create a S3 bucket for your frontend (B2).
-c.	Set up the bucket for static website hosting (same as HW1).
-d.	Upload the frontend files to the bucket (B2).
-e.	Integrate the API Gateway-generated SDK (SDK1) into the frontend, to connect your API.
+
+#### b.	Create a S3 bucket for your frontend (B2).
+
+#### c.	Set up the bucket for static website hosting.
+
+#### d.	Upload the frontend files to the bucket (B2).
+
+#### e.	Integrate the API Gateway-generated SDK (SDK1) into the frontend, to connect your API.
