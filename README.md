@@ -1,5 +1,5 @@
-# Text-Voice-Controlled-Photo-Album-AWS
-Photo album web application that can be searched using natural language through both text and voice.<br/>
+# voice-controlled-photo-album-on-aws
+Photo album web application that can be searched using natural language through both text and voice.
 This application uses Lex, ElasticSearch, and Rekognition to create an intelligent search layer to query your photos for people, objects, actions, landmarks and more.
 
 
@@ -55,7 +55,7 @@ There are 5 components:
 
 	b. Create an Amazon Lex bot to handle search queries.
 		i. Create one intent named “SearchIntent”.
-		ii. Add training utterances to the intent, such that the bot can pick up both keyword searches (“trees”, “birds”), as well as sentence searches (“show me trees”, “show me photos with trees and birds in them”).<br/>
+		ii. Add training utterances to the intent, such that the bot can pick up both keyword searches (“trees”, “birds”), as well as sentence searches (“show me trees”, “show me photos with trees and birds in them”).
 			* You should be able to handle at least one or two keywords per query.
 
 	c. Implement the Search Lambda function (LF2):
@@ -71,11 +71,11 @@ There are 5 components:
 		   https://github.com/001000001/ai-photo-search-columbia-f2018/blob/master/swagger.yaml
 
 	b. The API should have two methods:
-		i. PUT /photos<br/>
-		Set up the method as an Amazon S3 Proxy . This will allow API Gateway to forward your PUT request directly to S3.<br/>
+		i. PUT /photos
+		Set up the method as an Amazon S3 Proxy . This will allow API Gateway to forward your PUT request directly to S3.
 
 		ii. GET /search?q={query text}
-		Connect this method to the search Lambda function (LF2).<br/>
+		Connect this method to the search Lambda function (LF2).
 
 	c. Setup an API key for your two API methods.
 	d. Deploy the API.
@@ -84,10 +84,9 @@ There are 5 components:
 ### 5.	Frontend
 
 	a. Build a simple frontend application that allows users to:
-		i. Make search requests to the GET /search endpoint<br/>
-		ii. Display the results (photos) resulting from the query<br/>
-		iii. Upload new photos using the PUT /photos<br/>
-
+		i. Make search requests to the GET /search endpoint
+		ii. Display the results (photos) resulting from the query
+		iii. Upload new photos using the PUT /photos
 	b. Create a S3 bucket for your frontend (B2).
 	c. Set up the bucket for static website hosting.
 	d. Upload the frontend files to the bucket (B2).
