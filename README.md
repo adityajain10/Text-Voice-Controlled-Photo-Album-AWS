@@ -11,9 +11,9 @@ There are 5 components:
 
 ### 1. Launch an ElasticSearch instance 
 
-	a. Using AWS ElasticSearch service , create a new domain called “photos”.<br>
-	b. Make note of the Security Group (SG1) you attach to the domain.<br>
-	c. Deploy the service inside a VPC. This prevents unauthorized internet access to your service.<br>
+	a. Using AWS ElasticSearch service , create a new domain called “photos”.
+	b. Make note of the Security Group (SG1) you attach to the domain.
+	c. Deploy the service inside a VPC. This prevents unauthorized internet access to your service.
 
 #### 2. Upload & index photos
 
