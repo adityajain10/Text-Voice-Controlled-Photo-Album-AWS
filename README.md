@@ -15,7 +15,7 @@ There are 5 components:
 	b. Make note of the Security Group (SG1) you attach to the domain.
 	c. Deploy the service inside a VPC. This prevents unauthorized internet access to your service.
 
-#### 2. Upload & index photos
+### 2. Upload & index photos
 
 	a. Create a S3 bucket (B2) to store the photos.
 
