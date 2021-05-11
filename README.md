@@ -2,7 +2,6 @@
 Photo album web application that can be searched using natural language through both text and voice.<br/>
 This application uses Lex, ElasticSearch, and Rekognition to create an intelligent search layer to query your photos for people, objects, actions, landmarks and more.
 
-![screenshot](Images/Screenshot.png)
 
 ## Architecture
 ![screenshot](Images/architecture.png)
@@ -10,13 +9,11 @@ This application uses Lex, ElasticSearch, and Rekognition to create an intellige
 ## Steps:
 There are 5 components:
 
-### 1.	Launch an ElasticSearch instance 
+1. Launch an ElasticSearch instance 
 
-#### a.	Using AWS ElasticSearch service , create a new domain called “photos”.<br/>
-
-#### b.	Make note of the Security Group (SG1) you attach to the domain.<br/>
-
-#### c.	Deploy the service inside a VPC. This prevents unauthorized internet access to your service.<br/>
+	a. Using AWS ElasticSearch service , create a new domain called “photos”.<br/>
+	b. Make note of the Security Group (SG1) you attach to the domain.
+	c. Deploy the service inside a VPC. This prevents unauthorized internet access to your service.<br/>
 
 ### 2.	Upload & index photos
 
